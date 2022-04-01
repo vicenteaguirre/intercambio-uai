@@ -6,6 +6,9 @@ const App = () =>{
     <Fragment>
       <div className="container">
         <p>Internacional UAI</p>
+        <form action="../../" method="post" className="form">
+          <button type="submit">Connected?</button>
+        </form>
       </div>
     </Fragment>
   )
