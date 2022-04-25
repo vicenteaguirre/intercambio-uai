@@ -1,9 +1,41 @@
-const Pool = requiere("pg").Pool
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb+srv://grupo7:internacionaluai@base.zxygi.mongodb.net/db?retryWrites=true&w=majority";
+const client = new MongoClient(url)
 
-const connectionString = process.env.CONNECTION_URL
+async function main(client){
+    try {
+        await client.connect();
+        console.log("Database connected!");
+        //await listDatabases(client);
+        await printDatabase(client);
 
-const pool = new Pool({
-    connectionString
-})
+    } catch (e) {  
+        console.error(e)
+    } finally {
+        await client.close()
+    }
 
-module.exports = pool
+}
+async function listDatabases(client){
+    const databaseList = await client.db().admin().listDatabases()
+
+    console.log("Databases:")
+    databaseList.databases.forEach(db => {
+        console.log('- '+ db.name)
+    });
+}
+
+async function printDatabase(client){
+    const cursor = client.db("db").collection("testimonios").find()
+    const results = await cursor.toArray()
+    results.forEach((results) => {
+        console.log(results)
+    })
+}
+
+
+
+main(client).catch(console.error)
+
+module.exports = MongoClient
+
