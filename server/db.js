@@ -33,8 +33,6 @@ async function printDatabase(client){
     })
 }
 
-
-
 main(client).catch(console.error)
 
 module.exports = MongoClient
