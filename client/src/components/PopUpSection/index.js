@@ -9,6 +9,7 @@ function PopUp(props) {
       </div>
     ) :"";
   }
+  
 const PopUpSection = () => {
     const [buttonPopUp, setButtonPopUp] = useState(false);
     const trigger=false;
