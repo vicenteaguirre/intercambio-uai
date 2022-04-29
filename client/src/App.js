@@ -5,6 +5,7 @@ import {BrowserRouter as Router} from "react-router-dom"
 import Navbar from "./components/Navbar/index"
 import HeroSection from "./components/HeroSection";
 import TestimonioSection from "./components/TestimonioSection";
+import PopUpSection from "./components/PopUpSection";
 
 
 
@@ -16,6 +17,7 @@ const App = () =>{
       <Navbar />
       <HeroSection />
       <TestimonioSection />
+      <PopUpSection />
     </Router>
   )
 }
