@@ -2,8 +2,8 @@ import React from "react";
 import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Pais} from "../TestimonioSection/TestimonioElements"
 
 const TestimonioSection = () => {
-  return (
-      <>
+    return (
+        <>
         <TestimonioBg>
                 <TestimonioHeaderContainer>
                     <Line></Line>
@@ -16,6 +16,7 @@ const TestimonioSection = () => {
                         <TestimonioContent>
                             <Nombre>Vicente Aguirre</Nombre>
                             <Pais>España</Pais>
+
                         </TestimonioContent>
                     </TestimonioContainer>
 
@@ -46,9 +47,9 @@ const TestimonioSection = () => {
 
                 </TestimoniosSectionContainer>
         </TestimonioBg>
-      
-      </>
-  )
+        
+        </>
+    )
 };
 
 export default TestimonioSection;

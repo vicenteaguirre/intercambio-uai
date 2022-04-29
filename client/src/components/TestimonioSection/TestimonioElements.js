@@ -6,7 +6,6 @@ export const TestimonioBg = styled.div`
     width: auto;
     position: relative;
     top: -20px;
-
 `
 export const TestimonioHeaderContainer = styled.div`
     display:flex;
@@ -42,16 +41,16 @@ export const TestimoniosSectionContainer = styled.div`
     flex-wrap: wrap;
     width: 100%;
     margin: auto;
-    margin-top: 8rem;
+    margin-top: 4rem;
 
 `
 export const TestimonioContainer = styled.div`
     display: flex;
     background-color: darkgrey;
-    border-radius: 3rem;
+    border-radius: 2.5rem;
     justify-content: center;
-    height: 400px;
-    width: 600px;
+    height: 300px;
+    width: 350px;
     margin:1rem;
     align-items: center;
 `
