@@ -21,7 +21,7 @@ export const TestimonioHeader = styled.h2`
     font-family: "Bitter", serif;
     font-weight: 700;
     font-size: 25px;
-    font-size: 2.5rem;
+    font-size: 1.5625rem;
     color:#009fe3;
 `
 export const Line = styled.span`
@@ -39,18 +39,21 @@ export const TestimoniosSectionContainer = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;
+    width: 80%;
     margin: auto;
     margin-top: 4rem;
 
 `
 export const TestimonioContainer = styled.div`
     display: flex;
-    background-color: darkgrey;
+    background-color: grey;
+    background-position: center;
+    background-size:150%;
+    background-repeat: no-repeat;
     border-radius: 2.5rem;
     justify-content: center;
-    height: 300px;
-    width: 350px;
+    height: 200px;
+    width: 250px;
     margin:1rem;
     align-items: center;
 `
@@ -61,10 +64,12 @@ export const TestimonioContent = styled.div`
 `
 
 export const Nombre = styled.p`
-    color: black;
-    font-size: 2rem;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow:-1px 1px 3px black;
 `
 export const Pais = styled.p`
-    color: black;
-    font-size: 1.5rem;
+    color: white;
+    font-size: 0.9rem;
+    text-shadow:-1px 1px 3px black;
 `

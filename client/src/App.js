@@ -17,7 +17,6 @@ const App = () =>{
       <HeroSection />
       <TestimonioSection />
       <Footer />
-
     </Router>
   )
 }

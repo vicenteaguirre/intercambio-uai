@@ -1,7 +1,33 @@
-import React from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Pais} from "../TestimonioSection/TestimonioElements"
 
+const serverApiUrl = 'http://localhost:3001/testimonios'
+
+
 const TestimonioSection = () => {
+
+    const [testimonio, setTestimonio] = useState([])
+
+    const getTestimonio = async () => {
+        console.log(serverApiUrl)
+            try {
+                const response = await fetch(serverApiUrl,)
+                const jsonData = await response.json()
+                console.log(response)
+
+                setTestimonio(jsonData)
+                console.log(jsonData[0])
+            } catch (err) {
+                console.error(err.message)
+            }
+    }
+    useEffect(() => {
+        getTestimonio()
+    }, [])
+    console.log("Testimonio: "+ testimonio)
+
+
+
     return (
         <>
         <TestimonioBg>
@@ -10,41 +36,14 @@ const TestimonioSection = () => {
                     <TestimonioHeader>Testimonios</TestimonioHeader>
                     <Line></Line>
                 </TestimonioHeaderContainer>
-                <TestimoniosSectionContainer>
-
-                    <TestimonioContainer>
+                <TestimoniosSectionContainer>{testimonio.map(testimonio => 
+                    <TestimonioContainer key={testimonio._id} style={{backgroundImage: `url(${testimonio.imageProfile})`}}>
                         <TestimonioContent>
-                            <Nombre>Vicente Aguirre</Nombre>
-                            <Pais>España</Pais>
-
+                            <Nombre>{testimonio.nombre_completo}</Nombre>
+                            <Pais>{testimonio.pais}</Pais>
                         </TestimonioContent>
                     </TestimonioContainer>
-
-                    <TestimonioContainer>
-                        <TestimonioContent>
-                            <Nombre>Francesco Andrade</Nombre>
-                            <Pais>Italia</Pais>
-                        </TestimonioContent>
-                    </TestimonioContainer>
-
-                    <TestimonioContainer>
-                        <TestimonioContent>
-                            <Nombre>Thomas During</Nombre>
-                            <Pais>Inglaterra</Pais>
-                        </TestimonioContent>
-                    </TestimonioContainer>
-
-                    <TestimonioContainer>
-                        <TestimonioContent>
-                            <Nombre>Elon Musk</Nombre>
-                            <Pais>USA</Pais>
-                        </TestimonioContent>
-                    </TestimonioContainer>
-
-                    <TestimonioContainer>
-                        <TestimonioContent>Alumno5</TestimonioContent>
-                    </TestimonioContainer>
-
+                    )}
                 </TestimoniosSectionContainer>
         </TestimonioBg>
         
