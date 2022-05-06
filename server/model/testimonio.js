@@ -15,11 +15,11 @@ const testimonioSchema = new Schema({
     imageProfile:String
 });
 
-testimonioSchema.methods.setImageProfile = function setImageProfile (filename) {
-    const {host,port} = appConfig
-    this.imageProfile = `http://localhost:3001/public/${filename}.jpg`
+const setImageProfile = function setImageProfile (filename) {
+    const {host,port} = appConfig;
+    return(`http://localhost:3001/public/${filename}.jpg`);
 }
 
 const Testimonio = model('Testimonio', testimonioSchema);
-module.exports = Testimonio;
+module.exports = {Testimonio, setImageProfile};
 

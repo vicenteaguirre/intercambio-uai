@@ -10,7 +10,7 @@ router.post("/crear-testimonio", upload.single('image') ,Testimonio.create);
 // Obtener todos los testimonios
 router.get("/published", Testimonio.findAllPublished);
 // Update a Tutorial with id
-router.put("/:id", Testimonio.update);
+router.put("/:id",upload.single('image') ,Testimonio.update);
 // Delete a Tutorial with id
 router.delete("/:id", Testimonio.delete);
 // Create a new Tutorial
