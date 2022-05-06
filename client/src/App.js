@@ -29,7 +29,3 @@ const App = () =>{
 
 
 export default App;
-
-/*<form action="../../" method="post" className="form">
-          <button type="submit">Connected?</button>
-        </form>*/

@@ -60,7 +60,15 @@ export const TestimonioContainer = styled.div`
 `
 
 export const TestimonioContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+    flex-wrap: wrap;
+    height:inherit;
+    width: 80%;
+    //background:linear-gradient(to top, rgba(31, 31, 31, 0.82), rgba(94, 85, 85, 0.11))
 
 `
 
@@ -68,11 +76,13 @@ export const Nombre = styled.p`
     color: white;
     font-size: 1.2rem;
     text-shadow:-1px 1px 3px black;
+    margin-bottom: 0.3rem;
 `
-export const Pais = styled.p`
+export const Destino = styled.p`
     color: white;
     font-size: 0.9rem;
     text-shadow:-1px 1px 3px black;
+    margin: 0;
 `
 
 export const LinkFormContainer = styled.div`

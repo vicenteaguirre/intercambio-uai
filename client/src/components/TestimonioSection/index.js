@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Pais, LinkFormContainer,LinkForm} from "../TestimonioSection/TestimonioElements"
+import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Destino, LinkFormContainer,LinkForm} from "../TestimonioSection/TestimonioElements"
 
 const serverApiUrl = 'http://localhost:3001/testimonios'
 
@@ -41,7 +41,7 @@ const TestimonioSection = () => {
                     <TestimonioContainer key={testimonio._id} style={{backgroundImage: `url(${testimonio.imageProfile})`}}>
                         <TestimonioContent>
                             <Nombre>{testimonio.nombre_completo}</Nombre>
-                            <Pais>{testimonio.pais}</Pais>
+                            <Destino>{testimonio.u_destino},{testimonio.pais}</Destino>
                         </TestimonioContent>
                     </TestimonioContainer>
                     )}
