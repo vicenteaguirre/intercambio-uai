@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const TestimonioBg = styled.div`
     background-color: white;
-    height: 80rem;
+    height: auto;
     width: auto;
     position: relative;
     top: -20px;
+    margin-bottom: 10rem;
 `
 export const TestimonioHeaderContainer = styled.div`
     display:flex;
@@ -73,3 +74,13 @@ export const Pais = styled.p`
     font-size: 0.9rem;
     text-shadow:-1px 1px 3px black;
 `
+
+export const LinkFormContainer = styled.div`
+    margin-top: 2rem;
+
+`
+export const LinkForm = styled.p`
+    color: black;
+
+`
+

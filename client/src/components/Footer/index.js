@@ -5,7 +5,7 @@ const Footer = () => {
   return (
       <>
         <FooterContainer>
-            <FooterContent>Hola</FooterContent>
+            <FooterContent>Universidad Adolfo Ibañez</FooterContent>
         </FooterContainer>
       </>
   )

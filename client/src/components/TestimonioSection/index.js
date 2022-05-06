@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
-import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Pais} from "../TestimonioSection/TestimonioElements"
+import { Link } from "react-router-dom";
+import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Pais, LinkFormContainer,LinkForm} from "../TestimonioSection/TestimonioElements"
 
 const serverApiUrl = 'http://localhost:3001/testimonios'
 
@@ -45,6 +46,11 @@ const TestimonioSection = () => {
                     </TestimonioContainer>
                     )}
                 </TestimoniosSectionContainer>
+                <LinkFormContainer>
+                    <Link to="/form">
+                        <LinkForm>¡Haz click aca para subir tu experiencia!</LinkForm>
+                    </Link>
+                </LinkFormContainer>
         </TestimonioBg>
         
         </>
