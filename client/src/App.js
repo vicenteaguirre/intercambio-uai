@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar/index"
 import HeroSection from "./components/HeroSection";
 import TestimonioSection from "./components/TestimonioSection";
 import PopUpSection from "./components/PopUpSection";
+import { SliderData } from "./components/PopUpSection/SliderData";
+
 
 
 
@@ -17,7 +19,7 @@ const App = () =>{
       <Navbar />
       <HeroSection />
       <TestimonioSection />
-      <PopUpSection />
+      <PopUpSection slides={SliderData} />
     </Router>
   )
 }
