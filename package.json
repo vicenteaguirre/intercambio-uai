@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@cloudinary/url-gen": "^1.7.0",
-    "react-icons": "^4.3.1",
-    "react-image-crop": "^10.0.0"
-  }
-}
