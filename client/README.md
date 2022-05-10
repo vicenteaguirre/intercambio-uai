@@ -1,6 +1,6 @@
 # Client Folder
 
-Dentro de esta carpeta Client nos encontramos con la mayor parte de nuestro codigo.
+Dentro de esta carpeta Client nos encontramos con el front-end de la pagina.
 En esta tenemos la carpeta Public, la cual contiene elementos para aspectos visuales y tambien codigo para lograr el correcto funcionamiento de React.
 
 En la carpeta Src se encuentra mayor parte de nuestro trabajo. Dentro de esta podemos encontrar 3 carpetas mas:
