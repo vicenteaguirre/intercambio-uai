@@ -4,6 +4,7 @@ Dentro de esta carpeta Client nos encontramos con la mayor parte de nuestro codi
 En esta tenemos la carpeta Public, la cual contiene elementos para aspectos visuales y tambien codigo para lograr el correcto funcionamiento de React.
 
 En la carpeta Src se encuentra mayor parte de nuestro trabajo. Dentro de esta podemos encontrar 3 carpetas mas:
+
 - La carpeta Components, la cual posee las distintas secciones de la pagina. Como por ejemplo, el Footer (la parte de abajo de la pagina), PopUpSection (encargada de desplegar los PopUps), HeroSection( La introduccion de la pagina), NavBar (la barra de arriba para moverse entre distintas secciones) y TestimonioSection (donde se encuentran los testimonios de los alumnos).
 - Carpeta images posee un par de fotos implementadas en Components.
 - Carpeta Pages posee codigos JavaScript para las distintas paginas, como por ejemplo HomePage y Login
