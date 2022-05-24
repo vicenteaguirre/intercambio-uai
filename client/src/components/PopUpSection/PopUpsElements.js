@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const PopUpBg = styled.div`
     padding: 32px;
     display: flex;
-    flex.direction: column;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 1vh;
-    
 `
 export const PopUps = styled.div`
     position: fixed;
@@ -16,7 +15,6 @@ export const PopUps = styled.div`
     width: 100%;
     height: 100vh;
     background-color: rgba(0,0,0,0.6);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +52,6 @@ export const PopUpName = styled.h2`
     font-size: 25px;
     font-size: 2rem;
     color:#009fe3;
-    
 `
 export const PopUpInfoContainer = styled.div`
     position: absolute;
@@ -91,7 +88,6 @@ export const PopUpTestimonyIndex = styled.h3`
     font-weight: 700;
     font-size: 25px;
     font-size: 1.7rem;
-    
 `
 export const PopUpTestimonyContainer = styled.div`
     position: absolute;
@@ -124,14 +120,12 @@ export const PopUpGalleryContainer = styled.div`
     flex-flow: row wrap;
     margin-bottom: 20px;
     padding: 5px;
-
 `
 export const PopUpGalleryImage = styled.img`
     border: 3px solid black;
     max-height:80%;
     max-width:100%;
     border-radius: 1rem;
-
 `
 
 export const left_arrow = styled.button`
@@ -153,7 +147,6 @@ export const right_arrow = styled.button`
     z-index: 10;
     cursor:pointer;
     user-select:none;
-    
 `
 
 
