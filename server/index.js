@@ -1,17 +1,16 @@
 // Importando packages
+const dotenv = require('dotenv')
+dotenv.config()
 const express = require('express')
 const cors = require('cors')
-const route = require("./routes/testimonio.routes")
+const testimonio_router = require("./routes/testimonio.routes")
+const login_router = require("./routes/login.routes")
 const bodyParser = require('body-parser')
-require('dotenv').config();
-const Testimonio = require("./controllers/testimonio.controller");
 // Conectando a db
-const MongoClient = require('./mongo');
-
+const MongoClient = require('./configs/mongo');
 
 // Import env variables
-const URL = process.env.DB_URL;
-const PORT = process.env.APP_PORT;
+const { PORT } = require('./configs/config');
 
 // Config app
 const app = express()
@@ -19,6 +18,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(express.json())
-app.use(route)
-app.use('/public',express.static(`${__dirname}/storage/images`))
+app.use(testimonio_router)
+app.use(login_router)
+app.use('/public',express.static(`${__dirname}/public/images`))
 app.listen(PORT, () => console.log(`Servidor iniciado en puerto ${PORT}`))

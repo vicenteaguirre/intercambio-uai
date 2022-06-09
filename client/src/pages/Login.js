@@ -1,7 +1,11 @@
 import React from "react";
 
 const Login = () => {
-  return <div>Login</div>;
+  return(
+    <Fragment>
+        <Login/>
+    </Fragment>
+  )
 };
 
 export default Login;

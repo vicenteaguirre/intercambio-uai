@@ -4,6 +4,8 @@ import { PopUpBackground ,PopUpContainer, PopUpContent } from "../PopUp/PopUpEle
 
 
 export const Modal = ({ showModal, setShowModal}) => {
+  
+
   return( <>{showModal ? (
     <PopUpBackground>
       <PopUpContainer>

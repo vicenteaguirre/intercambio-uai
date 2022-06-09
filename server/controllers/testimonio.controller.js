@@ -1,4 +1,4 @@
-const {Testimonio, setImageProfile} = require("../model/testimonio");
+const {Testimonio, setImageProfile} = require("../models/testimonio");
 
 
 // Update a Tutorial by the id in the request
