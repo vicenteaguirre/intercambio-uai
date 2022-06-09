@@ -45,18 +45,22 @@ export const TestimoniosSectionContainer = styled.div`
     margin-top: 4rem;
 
 `
-export const TestimonioContainer = styled.div`
+export const TestimonioContainer = styled.button`
     display: flex;
     background-color: grey;
     background-position: center;
     background-size:150%;
     background-repeat: no-repeat;
     border-radius: 2.5rem;
+    border-color: #009fe3;
     justify-content: center;
     height: 200px;
     width: 250px;
     margin:1rem;
     align-items: center;
+    &:hover{
+        transform: scale(1.1);
+    }
 `
 
 export const TestimonioContent = styled.div`

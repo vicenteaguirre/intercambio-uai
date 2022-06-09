@@ -1,6 +1,7 @@
 import React from "react";
 import './App.css';
 //components
+
 import {BrowserRouter as Router , Routes, Route } from "react-router-dom"
 import Homepage from "./pages/Homepage";
 
@@ -13,9 +14,11 @@ import Login from "./pages/Login";
 
 
 
+
 const App = () =>{
   return(
     <Router>
+
     <Navbar/>
     <Routes>
       <Route exact path="/" element={<Homepage/>}/>
@@ -25,7 +28,6 @@ const App = () =>{
     </Router>
   )
 }
-
 
 
 export default App;

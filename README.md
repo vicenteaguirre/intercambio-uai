@@ -1,6 +1,9 @@
 # Intercambio UAI
 TICS 420 2022/1
 
-Actualmente es difícil visualizar dónde podemos como intercambio dependiendo de nuestra carrera, se requiere de un sitio web fácil de administrar que contenga testimonios de otros alumnos, los lugares a donde se puede ir de intercambio y la información para los alumnos extranjeros que llegan a la UAI. Los lugares y convenios de la universidad serán agrupados por carrera y país, teniendo un panel de administración para incluir nuevos a medida que se firmen los convenios. La vista de países será un listado de banderas y un mapa.	
+Actualmente la UAI no posee una sitio de experiencias internacionales. En el repositorio se busca crear una pagina que pueda mostrar testimonio, fotos e informacion tanto de alumnos que hayan venido a la universidad, como alumnos que hayan ido a otras fuera del pais. Esto ayudaria mucho a las personas que se encuentran indecisas sobre si hacer o no el intercambio, y si es asi, que universidad les parece mejor teniendo en cuenta informacion de ex-alumnos de estas.
+Esta pagina tambien tendra un enlace donde las alumnos o exalumos de la UAI puedan compartir su experiencia en busca de ayudar a los proximos estudiantes interacionales. La informacion de ésta sera revisada, y si es apta, sera subida a la pagina para poder ser visualizada por el resto
 
 Diego Mendez - Diego.Mendez@uai.cl
+
+Jira: https://francescoandrade.atlassian.net/jira/software/projects/INTER/boards/1/backlog
