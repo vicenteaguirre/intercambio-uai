@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import LoginSection from "../components/LoginSection";
 
 const Login = () => {
-  return <div>Login</div>;
+  return (
+    <Fragment>
+       <LoginSection/>
+    </Fragment>
+  );
 };
 
 export default Login;
