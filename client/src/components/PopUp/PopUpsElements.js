@@ -28,10 +28,13 @@ export const PopUpInside = styled.div`
     max-width: 640px;
     background-color: #FFF;
 `
-export const PopUpClose = styled.div`
+export const PopUpClose = styled.button`
     position: absolute;
     top: 16px;
     right: 16px;
+    &:hover{
+        transform: scale(1.3);
+    }
 `
 
 export const PopUpNameContainer = styled.div`
@@ -137,6 +140,9 @@ export const left_arrow = styled.button`
     z-index: 10;
     cursor:pointer;
     user-select:none;
+    &:hover{
+        transform: scale(1.3);
+    }
 `
 export const right_arrow = styled.button`
     position: absolute;
@@ -147,6 +153,9 @@ export const right_arrow = styled.button`
     z-index: 10;
     cursor:pointer;
     user-select:none;
+    &:hover{
+        transform: scale(1.3);
+    }
 `
 
 
