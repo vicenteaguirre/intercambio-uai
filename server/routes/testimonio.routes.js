@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Testimonio = require("../controllers/testimonio.controller");
-const upload = require('../middleware/upload');
+const upload = require('../middlewares/upload');
 
 
 

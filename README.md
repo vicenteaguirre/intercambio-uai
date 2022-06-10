@@ -7,3 +7,5 @@ Esta pagina tambien tendra un enlace donde las alumnos o exalumos de la UAI pued
 Diego Mendez - Diego.Mendez@uai.cl
 
 Jira: https://francescoandrade.atlassian.net/jira/software/projects/INTER/boards/1/backlog
+
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)

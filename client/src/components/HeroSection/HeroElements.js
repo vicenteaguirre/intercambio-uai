@@ -2,12 +2,14 @@ import styled from "styled-components";
 import image from "../../images/home.jpeg"
 
 
+
 export const HeroBg = styled.div`
     background-image: url(${image});
     background-size: cover;
     background-position: center;
     height: 500px;
     width: auto;
+    z-index: 0;
 `
 export const HeroContainer = styled.div`
     align-items: left;
@@ -19,7 +21,6 @@ export const HeroContainer = styled.div`
     max-width: 50rem;
     position: relative;
     width: 100%;
-    z-index: 1;
 `
 
 export const HeroTitle = styled.h1`
@@ -30,6 +31,7 @@ export const HeroTitle = styled.h1`
     font-family: 'Bitter', serif;
     text-align: left;
     text-shadow:-1px 1px 3px black;
+    z-index: 1;
 `
 export const HeroContent = styled.p`
     color: white;

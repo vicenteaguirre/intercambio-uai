@@ -38,7 +38,6 @@ export const TestimonioSection = (props) => {
         <>
         <TestimonioBg>
                 <TestimonioHeaderContainer>
-                    <Line></Line>
                     <TestimonioHeader>Testimonios</TestimonioHeader>
                     <Line></Line>
                 </TestimonioHeaderContainer>
