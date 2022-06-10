@@ -1,10 +1,7 @@
 // JWT GENERATOR
-
 const jwt = require("jsonwebtoken")
 const { JWT_SECRET } = require('./configs/config');
-
 const jwtSecret = JWT_SECRET
-
 const jwtGenerator = (userId) => {
     // genera un token jwt para el usuario dado
     if (userId) {
@@ -17,7 +14,6 @@ const jwtGenerator = (userId) => {
 }
 
 // ENCRYPT PASSWORD
-
 const bcrypt = require("bcrypt")
 
 const encrypt = async (password) => {
@@ -28,9 +24,7 @@ const encrypt = async (password) => {
     return bcryptPassword
 }
 
-
 // CHECK PASSWORD
-
 const compare = async (plainPassword, password) => {
     return await bcrypt.compare(plainPassword, password)
 }

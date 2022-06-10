@@ -8,7 +8,6 @@
     }
   },
   "dependencies": {
-    "@digitalroute/cz-conventional-changelog-for-jira": "^7.3.0",
-    "commitizen": "^4.2.4"
+    "@digitalroute/cz-conventional-changelog-for-jira": "^7.3.0"
   }
 }

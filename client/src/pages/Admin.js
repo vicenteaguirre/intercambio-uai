@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import TestimonioSection from "../components/TestimonioSection";
 
 const Admin = () => {
-  return <div>Admin</div>;
-};
+  return (
+    <Fragment>
+        <TestimonioSection/>
+        <TestimonioSection/>
+    </Fragment>
+)};
 
 export default Admin;
