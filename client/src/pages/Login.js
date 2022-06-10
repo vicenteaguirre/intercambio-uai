@@ -1,11 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
+import LoginSection from "../components/LoginSection";
 
 const Login = () => {
-  return(
+
+  return (
     <Fragment>
-        <Login/>
+       <LoginSection/>
     </Fragment>
-  )
+  );
+
 };
 
 export default Login;

@@ -5,13 +5,14 @@ import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSe
 
 const serverApiUrl = 'http://localhost:3001/testimonios'
 
-const TestimonioSection = (props) => {
+export const TestimonioSection = (props) => {
     const [testimonio, setTestimonio] = useState([])
     const [showModal,setShowModal] = useState(false);
 
     const openModal = () => {
       setShowModal(prev => !prev);
     }
+    
 
     const getTestimonio = async () => {
         console.log(serverApiUrl)
