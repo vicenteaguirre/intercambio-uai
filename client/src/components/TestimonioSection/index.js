@@ -8,11 +8,14 @@ const serverApiUrl = 'http://localhost:3001/testimonios'
 export const TestimonioSection = (props) => {
     const [testimonio, setTestimonio] = useState([])
     const [showModal,setShowModal] = useState(false);
+    const [idTestimonio,setIdTestimonio] = useState();
 
     const openModal = () => {
       setShowModal(prev => !prev);
     }
-    
+    const getId = (id) => {
+        setIdTestimonio(id);
+    }
 
     const getTestimonio = async () => {
         console.log(serverApiUrl)
@@ -30,9 +33,6 @@ export const TestimonioSection = (props) => {
     useEffect(() => {
         getTestimonio()
     }, [])
-    console.log("Testimonio: "+ testimonio)
-
-
 
     return (
         <>
@@ -45,15 +45,16 @@ export const TestimonioSection = (props) => {
                     <TestimonioContainer 
                     key={testimonio._id} 
                     style={{backgroundImage: `url(${testimonio.imageProfile})`}}
-                    onClick={openModal}>
+                    onClick={ () => {openModal(); getId(testimonio._id) }}>
                         <TestimonioContent>
                             <Nombre>{testimonio.nombre_completo}</Nombre>
                             <Destino>{testimonio.u_destino},{testimonio.pais}</Destino>
                         </TestimonioContent>
                     </TestimonioContainer>
+                    
                     )}
                 </TestimoniosSectionContainer>
-                <Modal showModal={showModal} setShowModal={setShowModal}></Modal>
+                <Modal showModal={showModal} setShowModal={setShowModal} idTestimonio={idTestimonio}></Modal>
                 <LinkFormContainer>
                     <Link to="/form">
                         <LinkForm>¡Haz click aca para subir tu experiencia!</LinkForm>
@@ -64,5 +65,4 @@ export const TestimonioSection = (props) => {
         </>
     )
 };
-
 export default TestimonioSection;

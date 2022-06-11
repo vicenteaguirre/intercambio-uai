@@ -86,12 +86,16 @@ exports.findAll = (req, res) => {
 
 // Find a single Tutorial with an id
 exports.findOne = (req, res) => {
+  console.log("Entre a findOne")
   const id = req.params.id;
   Testimonio.findById(id)
     .then(data => {
       if (!data)
-        res.status(404).send({ message: "Not found Tutorial with id " + id });
-      else res.send(data);
+        res.status(404).send({ message: "Not found testimony with id: " + id });
+      else {
+        console.log(id);
+        res.send(data);
+      }
     })
     .catch(err => {
       res

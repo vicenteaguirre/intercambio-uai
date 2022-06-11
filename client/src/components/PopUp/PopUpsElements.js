@@ -1,122 +1,77 @@
 import styled from "styled-components";
 
 export const PopUpBg = styled.div`
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 1vh;
-`
-export const PopUps = styled.div`
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
     background-color: rgba(0,0,0,0.6);
+    z-index:10;
+    width: 100%;
+    height: 100%;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
 `
 
-export const PopUpInside = styled.div`
-    position: relative;
-    padding: 350px;
-    width: 100%;
-    max-width: 640px;
+export const PopUp = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 40rem;
+`
+
+export const PopUpContentContainer = styled.div`
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
     background-color: #FFF;
+    width: 100%;
+    padding: 3rem;
+    padding-top: 1rem;
+
 `
 export const PopUpClose = styled.button`
-    position: absolute;
-    top: 16px;
-    right: 16px;
+    position: relative;
     &:hover{
         transform: scale(1.3);
     }
 `
-
-export const PopUpNameContainer = styled.div`
-    position: absolute;
-    display:flex;
-    justify-content:center;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 0rem;
-    top: 1px;
-    left: 100px;
-`
-
 export const PopUpName = styled.h2`
     text-align: center;
     font-family: "Bitter", serif;
     font-weight: 700;
-    font-size: 25px;
-    font-size: 2rem;
+    font-size: 2.8rem;
     color:#009fe3;
-`
-export const PopUpInfoContainer = styled.div`
-    position: absolute;
-    display:flex;
-    justify-content:center;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 0rem;
-    top: 120px;
-    left: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
 `
 export const PopUpInfo = styled.h3`
     text-align: left;
     font-family: "Bitter", serif;
     font-weight: 700;
-    font-size: 25px;
-    font-size: 1.7rem;
+    font-size: 1rem;
     line-height: 30px;
 `
 
-export const PopUpTestimonyIndexContainer = styled.div`
-    position: absolute;
-    display:flex;
-    justify-content:left;
-    flex-direction: row;
-    align-items: left;
-    margin-top: 0rem;
-    top: 305px;
-    left: 100px;
-`
-export const PopUpTestimonyIndex = styled.h3`
-    text-align: left;
-    font-family: "Bitter", serif;
-    font-weight: 700;
-    font-size: 25px;
-    font-size: 1.7rem;
-`
 export const PopUpTestimonyContainer = styled.div`
-    position: absolute;
     display:flex;
-    justify-content:left;
-    flex-direction: row;
-    align-items: left;
-    margin-top: 0rem;
-    top: 350px;
-    left: 100px;
-    right: 100px;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: flex-start;
+    width:40rem;
 `
-export const PopUpTestimony = styled.h4`
-    text-align: left;
+export const PopUpTestimony = styled.p`
+    text-align: justify;
     font-family: "Bitter", serif;
     font-weight: 700;
-    font-size: 20px;
-    font-size: 1.5rem;
-    max-width:1100px;
+    font-size: 1rem;
+    width: 100%;
 `
 export const PopUpGalleryContainer = styled.div`
-    position: absolute;
     height: 300px;
     top: 80px;
     right: 100px;
-    width: 500px;
+    width: 300px;
     display: over;
     justify-content: center;
     align-items:center;
@@ -132,7 +87,7 @@ export const PopUpGalleryImage = styled.img`
 `
 
 export const left_arrow = styled.button`
-    position: absolute;
+
     top: 50%;
     left: 32px;
     font-size: 3rem;
@@ -145,7 +100,7 @@ export const left_arrow = styled.button`
     }
 `
 export const right_arrow = styled.button`
-    position: absolute;
+
     top: 50%;
     left: 32px;
     font-size: 3rem;

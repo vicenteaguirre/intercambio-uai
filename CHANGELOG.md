@@ -7,3 +7,4 @@
 ### BREAKING CHANGE
 
 - Tiene cambios en la estructura del back-end que las versiones anteriores no tenian.
+

@@ -3,8 +3,8 @@ const dotenv = require('dotenv')
 dotenv.config()
 const express = require('express')
 const cors = require('cors')
-const testimonio_router = require("./routes/testimonio.routes")
-const login_router = require("./routes/login.routes")
+const testimonio_router = require("./routes/testimonio")
+const login_router = require("./routes/auth")
 const bodyParser = require('body-parser')
 // Conectando a db
 const MongoClient = require('./configs/mongo');

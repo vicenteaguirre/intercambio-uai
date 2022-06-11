@@ -31,6 +31,7 @@ exports.register = async (req, res) => {
         // Generamos token
         token = jwtGenerator(userStored._id)
         res.json( token )
+        
     } catch (err) {
         console.log(err)
         res.status(500).send("Server error")
@@ -43,6 +44,8 @@ exports.login = async (req, res) => {
     try {
         // 1. destructurizar req.body
         const { email, password } = req.body
+        console.log(email)
+        console.log(password)
 
         // 2. verificar si el usuario no existe (si no emitiremos un error)
         const user = await User.findOne({"email":email})
@@ -61,7 +64,7 @@ exports.login = async (req, res) => {
         // 4. entregar un token jwt 
         const token = jwtGenerator(user._id)
         console.log("Ingresado.")
-        res.json( token )
+        res.json("Token:"+ token )
         
     } catch (err) {
         console.log(err)

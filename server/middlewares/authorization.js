@@ -1,5 +1,9 @@
-// Un middleware para validar JWT
-const Authorization = async (req, res, next) => {
+// middleware/authorization.js
+const jwt = require("jsonwebtoken")
+const { JWT_SECRET } = require("../configs/config")
+
+// middleware de validación del token
+module.exports = async (req, res, next) => {
     try {
         // 1. obtiene el token del header del request
         const jwToken = req.header("token")
@@ -23,4 +27,3 @@ const Authorization = async (req, res, next) => {
     }
 }
 
-module.exports = Authorization;

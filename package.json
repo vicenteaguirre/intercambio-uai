@@ -4,10 +4,10 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira"
+      "path": "node_modules/cz-jira-smart-commit/"
     }
   },
   "dependencies": {
-    "@digitalroute/cz-conventional-changelog-for-jira": "^7.3.0"
+    "cz-jira-smart-commit": "^3.0.0"
   }
 }
