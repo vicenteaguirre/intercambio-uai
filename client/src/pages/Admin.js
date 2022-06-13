@@ -1,12 +1,15 @@
 import React, { Fragment } from "react";
-import AdminSection from "../components/AdminSection";
-import TestimonioSection from "../components/TestimonioSection";
+import TestimonioUAI from "../components/TestimonioSection/TestimonioUAI";
+import TestimonioInternacional from "../components/TestimonioSection/TestimonioInternacional";
+import TestimonioAdmin from "../components/TestimonioSection/TestimonioAdmin";
 
 const Admin = () => {
+  const showAdmin = true;
   return (
     <Fragment>
-        <TestimonioSection/>
-        <AdminSection/>
+        <TestimonioUAI/>
+        <TestimonioInternacional/>
+        <TestimonioAdmin/>
     </Fragment>
 )};
 

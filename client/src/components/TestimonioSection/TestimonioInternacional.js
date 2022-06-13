@@ -1,30 +1,32 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Modal } from "../PopUp/index";
-import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Destino} from "../TestimonioSection/TestimonioElements"
+import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Destino} from "./TestimonioElements"
 import axios from 'axios';
 
-export const AdminSection = (showAdmin) => {
+const serverApiUrl = 'http://localhost:3001/testimonio'
+
+export const TestimonioInternacional = () => {
     const [testimonios, setTestimonios] = useState([])
     const [testimonio, setTestimonio] = useState([])
     const [showModal,setShowModal] = useState(false);
-
+    
     const openModal = () => {
       setShowModal(prev => !prev);
     }
 
     const getTestimonio = (idTestimonio) => {
-        const getAllApiUrl = 'http://localhost:3001/testimonio/'
+        console.log(serverApiUrl+"/"+idTestimonio)
         axios
-        .get(getAllApiUrl+idTestimonio)
+        .get(serverApiUrl+"/"+idTestimonio)
         .then((response) => {
             setTestimonio(response.data)
         })
     }
 
     const getAll = async () => {
-        const getAllApiUrl = 'http://localhost:3001/admin'
+        console.log(serverApiUrl+"s-inter");
         axios
-        .get(getAllApiUrl)
+        .get(serverApiUrl+"s-inter")
         .then((response) => {
             setTestimonios(response.data)
         })
@@ -38,7 +40,7 @@ export const AdminSection = (showAdmin) => {
         <>
         <TestimonioBg>
                 <TestimonioHeaderContainer>
-                    <TestimonioHeader>Testimonios no publicados</TestimonioHeader>
+                    <TestimonioHeader>Estudiantes Internacionales</TestimonioHeader>
                     <Line></Line>
                 </TestimonioHeaderContainer>
                 <TestimoniosSectionContainer>{testimonios.map(testimonio => 
@@ -53,10 +55,10 @@ export const AdminSection = (showAdmin) => {
                     </TestimonioContainer>
                     )}
                 </TestimoniosSectionContainer>
-                <Modal showModal={showModal} setShowModal={setShowModal} testimonio={testimonio} showAdmin={showAdmin}></Modal>
+                <Modal showModal={showModal} setShowModal={setShowModal} testimonio={testimonio}></Modal>
         </TestimonioBg>
         
         </>
     )
 };
-export default AdminSection;
+export default TestimonioInternacional;

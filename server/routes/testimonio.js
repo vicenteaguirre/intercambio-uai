@@ -11,7 +11,8 @@ router.post("/crear-testimonio", upload.single('image') ,Testimonio.create);
 // Obtener un testimonio en especifico
 router.get("/testimonio/:id", Testimonio.findOne);
 // Obtenemos los testimonios publicados
-router.get("/testimonios", Testimonio.findPublished);
+router.get("/testimonios-uai", Testimonio.findUAI);
+router.get("/testimonios-inter", Testimonio.findInter);
 
 //*** Admin  ***/
 

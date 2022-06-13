@@ -1,9 +1,11 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Modal } from "../PopUp/index";
-import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Destino} from "../TestimonioSection/TestimonioElements"
+import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Destino} from "./TestimonioElements"
 import axios from 'axios';
 
-export const AdminSection = (showAdmin) => {
+const serverApiUrl = 'http://localhost:3001/testimonio'
+
+export const TestimonioAdmin = () => {
     const [testimonios, setTestimonios] = useState([])
     const [testimonio, setTestimonio] = useState([])
     const [showModal,setShowModal] = useState(false);
@@ -53,10 +55,10 @@ export const AdminSection = (showAdmin) => {
                     </TestimonioContainer>
                     )}
                 </TestimoniosSectionContainer>
-                <Modal showModal={showModal} setShowModal={setShowModal} testimonio={testimonio} showAdmin={showAdmin}></Modal>
+                <Modal showModal={showModal} setShowModal={setShowModal} testimonio={testimonio}></Modal>
         </TestimonioBg>
         
         </>
     )
 };
-export default AdminSection;
+export default TestimonioAdmin;
