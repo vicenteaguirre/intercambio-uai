@@ -1,5 +1,5 @@
 import React, { Fragment, useState} from "react";
-import {PopUpBg, PopUp,PopUpContentContainer,PopUpGalleryContainer,PopUpImgProfile,PopUpGalleryImage,PopUpTestimony,PopUpTestimonyContainer,PopUpName,PopUpInfo , PopUpClose, PopUpClosePlace, GalleryContainer, LeftArrow, RightArrow} from "./PopUpsElements"
+import {PopUpBg, PopUp,PopUpContentContainer,PopUpGalleryContainer,PopUpImgProfile,PopUpGalleryImage,PopUpTestimony,PopUpTestimonyContainer,PopUpHeaderContainer,PopUpName,PopUpInfo ,PopUpInfoContainer, PopUpClose, PopUpClosePlace, GalleryContainer, LeftArrow, RightArrow} from "./PopUpsElements"
 import {SliderData} from "../PopUp/SliderData"
 import {FaArrowAltCircleRight,FaArrowAltCircleLeft} from "react-icons/fa"
 import OutsideClickHandler from 'react-outside-click-handler';
@@ -24,12 +24,19 @@ export const Modal = ({ showModal, setShowModal, testimonio}) => {
             <OutsideClickHandler onOutsideClick={closeModal}>
             <PopUp>
                 <PopUpContentContainer>
+
                     <PopUpClosePlace>
                         <PopUpClose onClick={closeModal}> X</PopUpClose>
                     </PopUpClosePlace>
-                    <PopUpImgProfile></PopUpImgProfile>
-                    <PopUpName>{testimonio.nombre_completo}</PopUpName>
-                    <PopUpInfo>{testimonio.edad}, {testimonio.u_destino}, {testimonio.pais}</PopUpInfo>
+                    <PopUpHeaderContainer>
+                        <PopUpImgProfile
+                        style={{backgroundImage: `url(${testimonio.imageProfile})`}}
+                        ></PopUpImgProfile>
+                        <PopUpInfoContainer>
+                            <PopUpName>{testimonio.nombre_completo}</PopUpName>
+                            <PopUpInfo>{testimonio.edad} años, {testimonio.u_destino}, {testimonio.pais}</PopUpInfo>
+                        </PopUpInfoContainer>
+                    </PopUpHeaderContainer>
                     <PopUpTestimonyContainer>
                         <PopUpTestimony>{testimonio.testimonio}</PopUpTestimony>
                     </PopUpTestimonyContainer>   

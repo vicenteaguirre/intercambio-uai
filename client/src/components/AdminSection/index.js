@@ -3,8 +3,6 @@ import { Modal } from "../PopUp/index";
 import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Destino} from "../TestimonioSection/TestimonioElements"
 import axios from 'axios';
 
-const serverApiUrl = 'http://localhost:3001/admin'
-
 export const AdminSection = () => {
     const [testimonios, setTestimonios] = useState([])
     const [testimonio, setTestimonio] = useState([])
@@ -15,18 +13,18 @@ export const AdminSection = () => {
     }
 
     const getTestimonio = (idTestimonio) => {
-        console.log(serverApiUrl+"/"+idTestimonio)
+        const getAllApiUrl = 'http://localhost:3001/testimonio/'
         axios
-        .get(serverApiUrl+"/"+idTestimonio)
+        .get(getAllApiUrl+idTestimonio)
         .then((response) => {
             setTestimonio(response.data)
         })
     }
 
     const getAll = async () => {
-        console.log(serverApiUrl);
+        const getAllApiUrl = 'http://localhost:3001/admin'
         axios
-        .get(serverApiUrl)
+        .get(getAllApiUrl)
         .then((response) => {
             setTestimonios(response.data)
         })

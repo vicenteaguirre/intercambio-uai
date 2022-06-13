@@ -15,7 +15,7 @@ export const PopUpBg = styled.div`
 export const PopUp = styled.div`
     display: flex;
     width: 100%;
-    height: 40rem;
+    height: 50rem;
 `
 
 export const PopUpContentContainer = styled.div`
@@ -38,69 +38,81 @@ export const PopUpClose = styled.button`
 
 
 `
+export const PopUpHeaderContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    width: 90%;
+    max-height: 200px;
+`
+export const PopUpInfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-left: 2rem;
+
+
+`
 export const PopUpImgProfile = styled.div`
-    border-radius: 5rem;
-    width:3rem;
-    height:3rem;
-    border-width: 2rem;
-    border-color: black;
-    z-index:14;
+    display: flex;
+    background-color: grey;
+    background-position: center;
+    background-size:150%;
+    background-repeat: no-repeat;
+    border-radius: 7rem;
+    height: 200px;
+    width:200px;
 `
 
 export const PopUpName = styled.h2`
-    text-align: center;
+    text-align: start;
     font-family: "Bitter", serif;
     font-weight: 700;
-    font-size: 2.8rem;
-    color:#009fe3;
+    font-size: 2rem;
+    color: #545353;
     margin-top: 0;
     margin-bottom: 0;
+    font-weight: 700;
 `
 export const PopUpInfo = styled.h3`
     text-align: left;
-    font-family: "Bitter", serif;
+    color: #009fe3;
+    font-family: "Open Sans", sans-serif;
     font-weight: 700;
-    font-size: 1rem;
-    line-height: 30px;
+    font-size: 1.1rem;
+    line-height: 1.4375rem;
+    letter-spacing: 0.6px;
+    text-rendering: optimizeLegibility!important;
+    font-weight: 400;
+    margin: 0;
 `
 
 export const PopUpTestimonyContainer = styled.div`
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     width:40rem;
+    margin-top: 1.3rem;
+    min-height: 13rem;
 `
 export const PopUpTestimony = styled.p`
+    color: #545353;
     text-align: justify;
-    font-family: "Bitter", serif;
-    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
     font-size: 1rem;
     width: 100%;
+
+
 `
-export const PopUpGalleryContainer = styled.div`
-    height: 300px;
-    top: 80px;
-    right: 100px;
-    width: 300px;
-    display: over;
-    justify-content: center;
-    align-items:center;
-    flex-flow: row wrap;
-    margin-bottom: 20px;
-    padding: 5px;
-`
-export const PopUpGalleryImage = styled.img`
-    border: 3px solid black;
-    max-height:10rem;
-    min-width: 20rem;
-    max-width:100%;
-    border-radius: 1rem;
-    background-size: cover;
-`
+//**********************************/
 export const GalleryContainer = styled.div`
     display:flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content:space-evenly;
     align-items: center;
     align-content: center;
     width:100%;
@@ -117,6 +129,24 @@ export const RightArrow = styled.div`
     cursor:pointer;
     user-select:none;
 `
+export const PopUpGalleryContainer = styled.div`
+    height: 200px;
+    top: 80px;
+    right: 100px;
+    width: 400px;
+    display: over;
+    justify-content: center;
+    align-items:center;
+    flex-flow: row wrap;
+    margin-bottom: 20px;
+    padding: 5px;
+`
 
-
+export const PopUpGalleryImage = styled.img`
+    border: 3px solid #545353;
+    width: 100%;
+    max-height: 220px;
+    border-radius: 1rem;
+    background-size: cover;
+`
 

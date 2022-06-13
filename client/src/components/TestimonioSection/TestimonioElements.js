@@ -35,7 +35,7 @@ export const Line = styled.span`
 export const TestimoniosSectionContainer = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     width: 80%;
