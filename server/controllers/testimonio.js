@@ -68,8 +68,7 @@ exports.create = async (req, res) => {
   }
 };
 
-
-// Retrieve all Tutorials from the database.
+// Obtiene todo 
 exports.findAll = (req, res) => {
   Testimonio.find({})
     .then(data => {
@@ -83,17 +82,14 @@ exports.findAll = (req, res) => {
     });
 };
 
-
 // Find a single Tutorial with an id
 exports.findOne = (req, res) => {
-  console.log("Entre a findOne")
   const id = req.params.id;
   Testimonio.findById(id)
     .then(data => {
       if (!data)
         res.status(404).send({ message: "Not found testimony with id: " + id });
       else {
-        console.log(id);
         res.send(data);
       }
     })
@@ -101,5 +97,38 @@ exports.findOne = (req, res) => {
       res
         .status(500)
         .send({ message: "Error retrieving Tutorial with id=" + id });
+    });
+};
+
+// Testimonio 
+exports.findPublished = (req, res) => {
+  Testimonio.find({"state":"published"})
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "Not found testimony with id: " + id });
+      else {
+        res.send(data);
+      }
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving Tutorial with id="});
+    });
+};
+
+exports.findUnpublished = (req, res) => {
+  Testimonio.find({"state":"unpublished"})
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "Not found testimony with id: " + id });
+      else {
+        res.send(data);
+      }
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving Tutorial with id="});
     });
 };

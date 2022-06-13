@@ -11,12 +11,14 @@ router.post("/crear-testimonio", upload.single('image') ,Testimonio.create);
 // Obtener un testimonio en especifico
 router.get("/testimonio/:id", Testimonio.findOne);
 // Obtenemos los testimonios publicados
-router.get("/testimonios", Testimonio.findAll);
+router.get("/testimonios", Testimonio.findPublished);
 
 //*** Admin  ***/
 
 // Obtenemos los testimonios no publicados
-//router.get("admin/private", authorization, Testimonio)
+router.get("/admin", Testimonio.findUnpublished)
+//router.get("/admin/private", authorization, Testimonio.findUnpublished)
+
 // Publicar testimonios
 //router.update("admin/up/:id", authorization, Testimonio)
 // Bajar testimonios

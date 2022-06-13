@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import { LoginTitle, LoginBox, LoginButton, LoginInput, LoginText, LoginContainer  } from "./loginElements";
+import { LoginTitle, LoginBox, LoginButton, LoginInput, LoginText, LoginContainer  } from "./LoginElements";
 import { useNavigate } from "react-router-dom";
 
 const validateUser = 'http://localhost:3001/login'

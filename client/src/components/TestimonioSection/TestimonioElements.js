@@ -85,12 +85,3 @@ export const Destino = styled.p`
     margin: 0;
 `
 
-export const LinkFormContainer = styled.div`
-    margin-top: 2rem;
-
-`
-export const LinkForm = styled.p`
-    color: black;
-
-`
-

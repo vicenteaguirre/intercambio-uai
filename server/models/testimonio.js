@@ -10,7 +10,11 @@ const testimonioSchema = new Schema({
     u_destino: String,
     pais: String,
     testimonio: String,
-    imageProfile:String
+    imageProfile:String,
+    state: {
+        type: String,
+        default: "unpublished"
+    }
 });
 
 const setImageProfile = function setImageProfile (filename) {

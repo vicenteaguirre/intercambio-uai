@@ -28,10 +28,6 @@ exports.register = async (req, res) => {
         });
         const userStored = await newUser.save()
         res.status(201).send({userStored})
-
-        // Generamos token
-        token = jwtGenerator(userStored._id)
-        res.json( token )
         
     } catch (err) {
         console.log(err)

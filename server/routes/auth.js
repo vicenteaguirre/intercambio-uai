@@ -4,7 +4,7 @@ const validateUserInfo = require("../middlewares/validateUserInfo")
 const authorization = require("../middlewares/authorization");
 
 // Registrar User
-router.post("/register", validateUserInfo, User.register)
+router.post("/register", User.register)
 
 // Verificar User
 router.post("/login", validateUserInfo, User.login)

@@ -1,11 +1,11 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Modal } from "../PopUp/index";
-import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Destino} from "./TestimonioElements"
+import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Destino} from "../TestimonioSection/TestimonioElements"
 import axios from 'axios';
 
-const serverApiUrl = 'http://localhost:3001/testimonio'
+const serverApiUrl = 'http://localhost:3001/admin'
 
-export const TestimonioSection = () => {
+export const AdminSection = () => {
     const [testimonios, setTestimonios] = useState([])
     const [testimonio, setTestimonio] = useState([])
     const [showModal,setShowModal] = useState(false);
@@ -24,10 +24,9 @@ export const TestimonioSection = () => {
     }
 
     const getAll = async () => {
-        console.log(serverApiUrl+"s");
-        const estado = "published";
+        console.log(serverApiUrl);
         axios
-        .get(serverApiUrl+"s",{params:{state:estado}})
+        .get(serverApiUrl)
         .then((response) => {
             setTestimonios(response.data)
         })
@@ -41,7 +40,7 @@ export const TestimonioSection = () => {
         <>
         <TestimonioBg>
                 <TestimonioHeaderContainer>
-                    <TestimonioHeader>Testimonios</TestimonioHeader>
+                    <TestimonioHeader>Testimonios no publicados</TestimonioHeader>
                     <Line></Line>
                 </TestimonioHeaderContainer>
                 <TestimoniosSectionContainer>{testimonios.map(testimonio => 
@@ -62,4 +61,4 @@ export const TestimonioSection = () => {
         </>
     )
 };
-export default TestimonioSection;
+export default AdminSection;
