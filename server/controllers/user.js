@@ -1,5 +1,6 @@
 const { User } = require("../models/user");
-const {encrypt, jwtGenerator, compare} = require("../help");
+const {encrypt, compare} = require("../help");
+const {jwtGenerator} = require("../services/jwtGenerator");
 
 // Registrar User
 exports.register = async (req, res) => {
@@ -44,8 +45,6 @@ exports.login = async (req, res) => {
     try {
         // 1. destructurizar req.body
         const { email, password } = req.body
-        console.log(email)
-        console.log(password)
 
         // 2. verificar si el usuario no existe (si no emitiremos un error)
         const user = await User.findOne({"email":email})
@@ -56,15 +55,15 @@ exports.login = async (req, res) => {
 
         // 3. verificar si la clave es la misma que está almacenada en la base de datos
         const validPassword = await compare(password, user.password)
-        console.log("plain", password, user.password)
         if (!validPassword) {
             return res.status(401).json("Password incorrecta o email no existe")
         }
 
         // 4. entregar un token jwt 
         const token = jwtGenerator(user._id)
-        console.log("Ingresado.")
-        res.json("Token:"+ token )
+        console.log("Ingresado:"+email)
+        console.log("Token:"+token)
+        res.json(token)
         
     } catch (err) {
         console.log(err)

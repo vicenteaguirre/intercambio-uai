@@ -38,6 +38,15 @@ export const PopUpClose = styled.button`
 
 
 `
+export const PopUpImgProfile = styled.div`
+    border-radius: 5rem;
+    width:3rem;
+    height:3rem;
+    border-width: 2rem;
+    border-color: black;
+    z-index:14;
+`
+
 export const PopUpName = styled.h2`
     text-align: center;
     font-family: "Bitter", serif;
@@ -58,8 +67,7 @@ export const PopUpInfo = styled.h3`
 export const PopUpTestimonyContainer = styled.div`
     display:flex;
     flex-direction: column;
-    justify-content:flex-start;
-    align-items: flex-start;
+    justify-content: center;
     width:40rem;
 `
 export const PopUpTestimony = styled.p`
@@ -83,33 +91,31 @@ export const PopUpGalleryContainer = styled.div`
 `
 export const PopUpGalleryImage = styled.img`
     border: 3px solid black;
-    max-height:80%;
+    max-height:10rem;
+    min-width: 20rem;
     max-width:100%;
     border-radius: 1rem;
+    background-size: cover;
 `
-export const arrowsPlacementt = styled.div`
-display:flex;
-flex-direction: column;
-justify-content:flex-start;
-align-items: flex-start;
-width:40rem;
+export const GalleryContainer = styled.div`
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    align-content: center;
+    width:100%;
 `
-export const left_arrow = styled.div`
-    position:absolute;
-    top:50%;
-    right:32px;
-    z-index:13;
+export const LeftArrow = styled.div`
+    position:relative;
+    z-index:11;
     cursor:pointer;
     user-select:none;
 `
-export const right_arrow = styled.div`
-    position:absolute;
-    top:50%;
-    z-index:13;
+export const RightArrow = styled.div`
+    position:relative;
+    z-index:11;
     cursor:pointer;
     user-select:none;
-    border: 3px solid black;
-    border-radius: 3rem;
 `
 
 

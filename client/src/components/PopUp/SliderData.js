@@ -11,5 +11,8 @@ export const SliderData =[
     },
     {
         image: "https://fondosmil.com/fondo/54376.jpg"
+    },
+    {
+        image: "https://www.doorwaysinternational.com/wp-content/uploads/2020/09/Land-A-6.jpg"
     }
 ];
