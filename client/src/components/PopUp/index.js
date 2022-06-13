@@ -1,9 +1,11 @@
 
 import React, { Fragment, useState} from "react";
-import {PopUpBg, PopUp,PopUpContentContainer,PopUpGalleryContainer,PopUpGalleryImage,PopUpTestimony,PopUpTestimonyContainer,PopUpName,PopUpInfo , PopUpClose} from "./PopUpsElements"
+import {PopUpBg, PopUp,PopUpContentContainer,PopUpGalleryContainer,PopUpGalleryImage,PopUpTestimony,PopUpTestimonyContainer,PopUpName,PopUpInfo , PopUpClose, PopUpClosePlace} from "./PopUpsElements"
+import arrowsPlacementt from "../PopUp/PopUpsElements"
 import {SliderData} from "../PopUp/SliderData"
 import axios from 'axios';
-
+import {FaArrowAltCircleRight,FaArrowAltCircleLeft} from "react-icons/fa"
+import OutsideClickHandler from 'react-outside-click-handler';
 
 
 const serverApiUrl = 'http://localhost:3001/testimonio/'
@@ -34,8 +36,20 @@ export const Modal = ({ showModal, setShowModal, idTestimonio}) => {
     
     return( <>{showModal ? (
         <PopUpBg>
+            <OutsideClickHandler onOutsideClick={closeModal}>
             <PopUp>
                 <PopUpContentContainer>
+                    <arrowsPlacementt>
+                        <left_arrow>
+                            <FaArrowAltCircleLeft onClick={prevSlide}></FaArrowAltCircleLeft>
+                        </left_arrow>
+                        <right_arrow>
+                            <FaArrowAltCircleRight onClick={nextSlide}></FaArrowAltCircleRight>
+                        </right_arrow>
+                    </arrowsPlacementt>
+                    <PopUpClosePlace>
+                        <PopUpClose onClick={closeModal}> X</PopUpClose>
+                    </PopUpClosePlace>
                     <PopUpName>Vicente Aguirre</PopUpName>
                     <PopUpInfo>21, Ing. Civil Industrial, España</PopUpInfo>
                     <PopUpTestimonyContainer>
@@ -49,13 +63,12 @@ export const Modal = ({ showModal, setShowModal, idTestimonio}) => {
                                 </div>
                             )   
                         })}
-                        <left_arrow onClick={prevSlide}> prev </left_arrow>
-                        <right_arrow onClick={nextSlide}> next </right_arrow>
-                    
+                        
+
                     </PopUpGalleryContainer>
-                    <PopUpClose onClick={closeModal}> X</PopUpClose>
                 </PopUpContentContainer>
-            </PopUp> 
+            </PopUp>
+            </OutsideClickHandler> 
         </PopUpBg>     
     ): null}</>);
 };

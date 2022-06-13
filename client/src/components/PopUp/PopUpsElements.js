@@ -14,8 +14,7 @@ export const PopUpBg = styled.div`
 
 export const PopUp = styled.div`
     display: flex;
-    justify-content: center;
-    width: 80%;
+    width: 100%;
     height: 40rem;
 `
 
@@ -30,11 +29,14 @@ export const PopUpContentContainer = styled.div`
     padding-top: 1rem;
 
 `
-export const PopUpClose = styled.button`
+export const PopUpClosePlace =styled.div`
     position: relative;
-    &:hover{
-        transform: scale(1.3);
-    }
+    top: -5px;
+    right: -340px;
+`
+export const PopUpClose = styled.button`
+
+
 `
 export const PopUpName = styled.h2`
     text-align: center;
@@ -85,32 +87,29 @@ export const PopUpGalleryImage = styled.img`
     max-width:100%;
     border-radius: 1rem;
 `
-
-export const left_arrow = styled.button`
-
-    top: 50%;
-    left: 32px;
-    font-size: 3rem;
-    color: black;
-    z-index: 10;
-    cursor:pointer;
-    user-select:none;
-    &:hover{
-        transform: scale(1.3);
-    }
+export const arrowsPlacementt = styled.div`
+display:flex;
+flex-direction: column;
+justify-content:flex-start;
+align-items: flex-start;
+width:40rem;
 `
-export const right_arrow = styled.button`
-
-    top: 50%;
-    left: 32px;
-    font-size: 3rem;
-    color: black;
-    z-index: 10;
+export const left_arrow = styled.div`
+    position:absolute;
+    top:50%;
+    right:32px;
+    z-index:13;
     cursor:pointer;
     user-select:none;
-    &:hover{
-        transform: scale(1.3);
-    }
+`
+export const right_arrow = styled.div`
+    position:absolute;
+    top:50%;
+    z-index:13;
+    cursor:pointer;
+    user-select:none;
+    border: 3px solid black;
+    border-radius: 3rem;
 `
 
 
