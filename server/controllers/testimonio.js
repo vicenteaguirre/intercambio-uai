@@ -101,8 +101,8 @@ exports.findOne = (req, res) => {
 };
 
 // Testimonio 
-exports.findPublished = (req, res) => {
-  Testimonio.find({"state":"published"})
+exports.findUAI = (req, res) => {
+  Testimonio.find({"state":"published","u_destino":{$ne: "UAI"}})
     .then(data => {
       if (!data)
         res.status(404).send({ message: "Not found testimony with id: " + id });
@@ -116,6 +116,22 @@ exports.findPublished = (req, res) => {
         .send({ message: "Error retrieving Tutorial with id="});
     });
 };
+exports.findInter= (req, res) => {
+  Testimonio.find({"state":"published","u_destino":"UAI"})
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "Not found testimony with id: " + id });
+      else {
+        res.send(data);
+      }
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving Tutorial with id="});
+    });
+};
+
 
 exports.findUnpublished = (req, res) => {
   Testimonio.find({"state":"unpublished"})

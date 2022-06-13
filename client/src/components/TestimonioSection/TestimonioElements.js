@@ -24,7 +24,7 @@ export const TestimonioHeader = styled.h2`
     color:#545353;
 `
 export const Line = styled.span`
-    background-color: #545353;
+    background-color: #009fe3;
     content: '';
     position: relative;
     width: 35px;
@@ -49,13 +49,12 @@ export const TestimonioContainer = styled.button`
     background-position: center;
     background-size:150%;
     background-repeat: no-repeat;
-    border-radius: 1.4rem;
+    border-radius: 0.6rem;
     border-color: #545353;
-    justify-content: center;
+    justify-content: flex-start;
     height: 200px;
     width: 250px;
     margin:1rem;
-    align-items: center;
     &:hover{
         transform: scale(1.1);
     }
@@ -64,12 +63,10 @@ export const TestimonioContainer = styled.button`
 export const TestimonioContent = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height:inherit;
-    width: fit-content;
-    overflow: hidden;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    padding-bottom: 1rem;
 `
 
 export const Nombre = styled.p`

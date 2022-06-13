@@ -149,4 +149,19 @@ export const PopUpGalleryImage = styled.img`
     border-radius: 1rem;
     background-size: cover;
 `
+export const AdminManagmentSection = styled.div`
+    width:100%;
+    height: 8rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 
+`
+
+export const AdminManagment = styled.button`
+    background-color: #72bfa0;
+    padding: 0.7rem;
+    margin: 1rem;
+
+`

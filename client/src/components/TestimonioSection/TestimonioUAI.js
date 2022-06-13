@@ -5,11 +5,11 @@ import axios from 'axios';
 
 const serverApiUrl = 'http://localhost:3001/testimonio'
 
-export const TestimonioSection = () => {
+export const TestimonioUAI = () => {
     const [testimonios, setTestimonios] = useState([])
     const [testimonio, setTestimonio] = useState([])
     const [showModal,setShowModal] = useState(false);
-
+    
     const openModal = () => {
       setShowModal(prev => !prev);
     }
@@ -24,10 +24,9 @@ export const TestimonioSection = () => {
     }
 
     const getAll = async () => {
-        console.log(serverApiUrl+"s");
-        const estado = "published";
+        console.log(serverApiUrl+"s-uai");
         axios
-        .get(serverApiUrl+"s",{params:{state:estado}})
+        .get(serverApiUrl+"s-uai")
         .then((response) => {
             setTestimonios(response.data)
         })
@@ -41,7 +40,7 @@ export const TestimonioSection = () => {
         <>
         <TestimonioBg>
                 <TestimonioHeaderContainer>
-                    <TestimonioHeader>Testimonios</TestimonioHeader>
+                    <TestimonioHeader>Estudiantes UAI</TestimonioHeader>
                     <Line></Line>
                 </TestimonioHeaderContainer>
                 <TestimoniosSectionContainer>{testimonios.map(testimonio => 
@@ -62,4 +61,4 @@ export const TestimonioSection = () => {
         </>
     )
 };
-export default TestimonioSection;
+export default TestimonioUAI;

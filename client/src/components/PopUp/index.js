@@ -1,13 +1,13 @@
 import React, { Fragment, useState} from "react";
-import {PopUpBg, PopUp,PopUpContentContainer,PopUpGalleryContainer,PopUpImgProfile,PopUpGalleryImage,PopUpTestimony,PopUpTestimonyContainer,PopUpHeaderContainer,PopUpName,PopUpInfo ,PopUpInfoContainer, PopUpClose, PopUpClosePlace, GalleryContainer, LeftArrow, RightArrow} from "./PopUpsElements"
+import {PopUpBg, PopUp,PopUpContentContainer,PopUpGalleryContainer,PopUpImgProfile,PopUpGalleryImage,PopUpTestimony,PopUpTestimonyContainer,PopUpHeaderContainer,PopUpName,PopUpInfo ,PopUpInfoContainer, PopUpClose, PopUpClosePlace, GalleryContainer, LeftArrow, RightArrow,AdminManagmentSection,AdminManagment} from "./PopUpsElements"
 import {SliderData} from "../PopUp/SliderData"
 import {FaArrowAltCircleRight,FaArrowAltCircleLeft} from "react-icons/fa"
 import OutsideClickHandler from 'react-outside-click-handler';
 
-export const Modal = ({ showModal, setShowModal, testimonio}) => {
+export const Modal = ({ showModal, setShowModal, testimonio, showAdmin}) => {
+    console.log(showAdmin);
     const length =5;
     const [current, setCurrent] = useState(0);
-    //const [testimonio, setTestimonio] = useState([]);
 
     const closeModal = () => {
       setShowModal(prev => !prev);
@@ -34,7 +34,8 @@ export const Modal = ({ showModal, setShowModal, testimonio}) => {
                         ></PopUpImgProfile>
                         <PopUpInfoContainer>
                             <PopUpName>{testimonio.nombre_completo}</PopUpName>
-                            <PopUpInfo>{testimonio.edad} años, {testimonio.u_destino}, {testimonio.pais}</PopUpInfo>
+                            <PopUpInfo>{testimonio.edad} años, Ing. Civil Industrial,</PopUpInfo>
+                            <PopUpInfo>{testimonio.u_destino}, {testimonio.pais}.</PopUpInfo>
                         </PopUpInfoContainer>
                     </PopUpHeaderContainer>
                     <PopUpTestimonyContainer>
@@ -59,6 +60,10 @@ export const Modal = ({ showModal, setShowModal, testimonio}) => {
                         <FaArrowAltCircleRight onClick={nextSlide}></FaArrowAltCircleRight>
                     </RightArrow>
                     </GalleryContainer>
+                        <AdminManagmentSection>
+                            <AdminManagment style={{backgroundColor: "#e2aaa2"}}>Eliminar</AdminManagment>
+                            <AdminManagment style={{backgroundColor: "#72bfa0"}}>Publicar</AdminManagment>
+                        </AdminManagmentSection>
                 </PopUpContentContainer>
             </PopUp>
             </OutsideClickHandler> 
