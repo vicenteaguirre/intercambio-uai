@@ -27,7 +27,7 @@ export const Modal = ({ showModal, setShowModal, testimonio}) => {
                     <PopUpClosePlace>
                         <PopUpClose onClick={closeModal}> X</PopUpClose>
                     </PopUpClosePlace>
-                    <PopUpImgProfile>Hola</PopUpImgProfile>
+                    <PopUpImgProfile></PopUpImgProfile>
                     <PopUpName>{testimonio.nombre_completo}</PopUpName>
                     <PopUpInfo>{testimonio.edad}, {testimonio.u_destino}, {testimonio.pais}</PopUpInfo>
                     <PopUpTestimonyContainer>
