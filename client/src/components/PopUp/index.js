@@ -52,8 +52,6 @@ export const Modal = ({ showModal, setShowModal, testimonio, showAdmin}) => {
                                 </div>
                             )   
                         })}
-                        
-
                     </PopUpGalleryContainer>
                     <RightArrow>
                         <FaArrowAltCircleRight onClick={nextSlide}></FaArrowAltCircleRight>
@@ -71,6 +69,3 @@ export const Modal = ({ showModal, setShowModal, testimonio, showAdmin}) => {
         </PopUpBg>     
     ): null}</>);
 };
-    
-    
-    
