@@ -1,11 +1,11 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader,SpanTitle, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, SpanTestimonio, TestimonioInfo, Nombre, Info} from "./TestimonioElements"
 import { Modal } from "../PopUp/index";
-import {TestimonioBg, TestimonioHeaderContainer, TestimonioHeader, TestimoniosSectionContainer, TestimonioContainer, TestimonioContent, Line, Nombre, Destino} from "./TestimonioElements"
 import axios from 'axios';
 
 const serverApiUrl = 'http://localhost:3001/testimonio'
 
-export const TestimonioUAI = () => {
+export const TestimonioUAI = (showAdmin) => {
     const [testimonios, setTestimonios] = useState([])
     const [testimonio, setTestimonio] = useState([])
     const [showModal,setShowModal] = useState(false);
@@ -41,7 +41,7 @@ export const TestimonioUAI = () => {
         <TestimonioBg>
                 <TestimonioHeaderContainer>
                     <TestimonioHeader>Estudiantes UAI</TestimonioHeader>
-                    <Line></Line>
+                    <SpanTitle></SpanTitle>
                 </TestimonioHeaderContainer>
                 <TestimoniosSectionContainer>{testimonios.map(testimonio => 
                     <TestimonioContainer 
@@ -49,8 +49,11 @@ export const TestimonioUAI = () => {
                     style={{backgroundImage: `url(${testimonio.imageProfile})`}}
                     onClick={ () => {openModal(); getTestimonio(testimonio._id) }}>
                         <TestimonioContent>
-                            <Nombre>{testimonio.nombre_completo}</Nombre>
-                            <Destino>{testimonio.u_destino},{testimonio.pais}</Destino>
+                            <SpanTestimonio></SpanTestimonio>
+                            <TestimonioInfo>
+                                <Nombre>{testimonio.nombre_completo}</Nombre>
+                                <Info>{testimonio.u_destino},{testimonio.pais}</Info>
+                            </TestimonioInfo>
                         </TestimonioContent>
                     </TestimonioContainer>
                     )}

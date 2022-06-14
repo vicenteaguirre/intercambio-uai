@@ -23,7 +23,7 @@ export const TestimonioHeader = styled.h2`
     font-size: 1.5625rem;
     color:#545353;
 `
-export const Line = styled.span`
+export const SpanTitle = styled.span`
     background-color: #009fe3;
     content: '';
     position: relative;
@@ -45,16 +45,16 @@ export const TestimoniosSectionContainer = styled.div`
 `
 export const TestimonioContainer = styled.button`
     display: flex;
+    flex-direction: row;
     background-color: grey;
     background-position: center;
     background-size:150%;
     background-repeat: no-repeat;
     border-radius: 0.6rem;
     border-color: #545353;
-    justify-content: flex-start;
+    align-items: flex-end;
     height: 200px;
     width: 250px;
-    margin:1rem;
     &:hover{
         transform: scale(1.1);
     }
@@ -62,23 +62,50 @@ export const TestimonioContainer = styled.button`
 
 export const TestimonioContent = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    flex-direction: row;
+    margin-left: -0.4rem;
     width: 100%;
-    padding-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    height: 4rem;
 `
-
+export const SpanTestimonio = styled.span`
+    background-color: #009fe3;
+    content: '';
+    position: relative;
+    width: 6px;
+    height: 100%;
+    
+`
+export const TestimonioInfo= styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    margin-left: 0.5rem;
+`
 export const Nombre = styled.p`
-    color: white;
-    font-size: 1.2rem;
-    text-shadow:-1px 1px 3px black;
-    margin-bottom: 0.3rem;
-`
-export const Destino = styled.p`
-    color: white;
-    font-size: 0.9rem;
-    text-shadow:-1px 1px 3px black;
     margin: 0;
+    text-align: start;
+    color: white;
+    font-size: 1.5625rem;
+    text-shadow:-1px 1px 2px black;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    font-family: "Bitter", serif;
+    line-height: 1.75rem;
+
+`
+export const Info = styled.p`
+    margin: 0;
+    text-align: start;
+    color: white;
+    font-size: 0.8rem;
+    text-shadow:-1px 1px 3px black;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    font-family: "Bitter", serif;
+    line-height: 1.75rem;
 `
 

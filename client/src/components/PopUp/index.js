@@ -5,7 +5,6 @@ import {FaArrowAltCircleRight,FaArrowAltCircleLeft} from "react-icons/fa"
 import OutsideClickHandler from 'react-outside-click-handler';
 
 export const Modal = ({ showModal, setShowModal, testimonio, showAdmin}) => {
-    console.log(showAdmin);
     const length =5;
     const [current, setCurrent] = useState(0);
 
@@ -60,10 +59,12 @@ export const Modal = ({ showModal, setShowModal, testimonio, showAdmin}) => {
                         <FaArrowAltCircleRight onClick={nextSlide}></FaArrowAltCircleRight>
                     </RightArrow>
                     </GalleryContainer>
+                    {showAdmin ? (
                         <AdminManagmentSection>
                             <AdminManagment style={{backgroundColor: "#e2aaa2"}}>Eliminar</AdminManagment>
                             <AdminManagment style={{backgroundColor: "#72bfa0"}}>Publicar</AdminManagment>
                         </AdminManagmentSection>
+                    ):null}
                 </PopUpContentContainer>
             </PopUp>
             </OutsideClickHandler> 

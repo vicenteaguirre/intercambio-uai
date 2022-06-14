@@ -4,11 +4,11 @@ import TestimonioInternacional from "../components/TestimonioSection/TestimonioI
 import TestimonioAdmin from "../components/TestimonioSection/TestimonioAdmin";
 
 const Admin = () => {
-  const showAdmin = true;
+
   return (
     <Fragment>
-        <TestimonioUAI/>
-        <TestimonioInternacional/>
+        <TestimonioUAI showAdmin={true}/>
+        <TestimonioInternacional showAdmin={true}/>
         <TestimonioAdmin/>
     </Fragment>
 )};

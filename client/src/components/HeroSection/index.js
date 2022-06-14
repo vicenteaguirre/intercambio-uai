@@ -7,11 +7,9 @@ const HeroSection = () => {
         <HeroBg>
             <HeroContainer>
                 <HeroTitle>Experiencias Internacionales</HeroTitle>
-                <HeroContent>Conoce los testimonios de los añumnos que han experimentado el intercambio.</HeroContent>
+                <HeroContent>Conoce los testimonios de los alumnos que han experimentado el intercambio.</HeroContent>
             </HeroContainer>
         </HeroBg>
-     
-     
      </> 
   )
 };
