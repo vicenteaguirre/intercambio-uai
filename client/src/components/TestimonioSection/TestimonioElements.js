@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const TestimonioBg = styled.div`
     background-color: white;
-    height: 30rem;
+    height: auto;
     width: auto;
     position: relative;
+    top: -20px;
+    margin-bottom: 10rem;
 `
 export const TestimonioHeaderContainer = styled.div`
     display:flex;
@@ -12,7 +14,6 @@ export const TestimonioHeaderContainer = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 4rem;
-    margin-bottom: 4rem;
 `
 export const TestimonioHeader = styled.h2`
     text-align: center;
@@ -33,13 +34,13 @@ export const SpanTitle = styled.span`
 `
 export const TestimoniosSectionContainer = styled.div`
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
-    align-content: space-between;
     align-items: center;
-    flex-flow: row wrap;
-    row-gap: 5rem;
+    flex-wrap: wrap;
     width: 80%;
     margin: auto;
+    margin-top: 4rem;
 
 `
 export const TestimonioContainer = styled.button`
@@ -51,12 +52,9 @@ export const TestimonioContainer = styled.button`
     background-repeat: no-repeat;
     border-radius: 0.6rem;
     border-color: #545353;
-    border-width: 0.1rem;
-    border-style: solid;
     align-items: flex-end;
     height: 200px;
     width: 250px;
-    z-index: 8;
     &:hover{
         transform: scale(1.1);
     }

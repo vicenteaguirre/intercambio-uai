@@ -1,5 +1,14 @@
 import React from "react";
-import { FormBox, FormContainer, FormTitle, FormText, FormInput, FormSelect, TestimonioBox, FormButton  } from "./FormElements";
+import { FormBox, FormContainer, FormTitle, FormBox2, FormText, FormInput, FormSelect,  FormInput2, TestimonioBox, FormButton  } from "./FormElements";
+import ReactDOM from "react-dom";
+import { useState } from "react";
+import { render } from 'react-dom';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+
+const container = document.getElementById("root");
+const root = createRoot(container);
 
 const FormSection = () => {
     return (
@@ -43,7 +52,7 @@ const FormSection = () => {
             <FormText>Testimonio:</FormText><TestimonioBox type="text" placeholder="Ingrese su testimonio..."/>
             <FormText>Ingrese imagenes y/o videos de su viaje:</FormText><FormInput name="Submit" type="file" />
         
-            <FormButton>Enviar</FormButton>
+            <FormButton>Listo</FormButton>
             </FormBox>
 
         </FormContainer>
