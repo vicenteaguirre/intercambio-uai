@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import TestimonioUAI from "../components/TestimonioSection/TestimonioUAI";
 import TestimonioInternacional from "../components/TestimonioSection/TestimonioInternacional";
 import TestimonioAdmin from "../components/TestimonioSection/TestimonioAdmin";
-import {Texto} from "../components/Aux/AuxElements"
+import {Texto} from "../components/AuxSection/AuxElements"
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
@@ -26,7 +26,7 @@ const Admin = () => {
 
   useEffect(() => {
     getAuth()
-  }, [])
+  },)
 
   if(auth===true){
     return (
