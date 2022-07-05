@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
     try {
         // 1. obtiene el token del header del request
         const jwToken = req.header("token")
-
+        console.log(req.header.token)
         // 2. si no hay token presente es un error
         if (!jwToken) {
             return res.status(403).json("No autorizado")

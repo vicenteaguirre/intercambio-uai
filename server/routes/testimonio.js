@@ -21,11 +21,12 @@ router.get("/admin", Testimonio.findUnpublished)
 //router.get("/admin/private", authorization, Testimonio.findUnpublished)
 
 // Publicar testimonios
-//router.update("admin/up/:id", authorization, Testimonio)
+router.put("/up/:id", authorization, Testimonio.update)
 // Bajar testimonios
 //router.update("admin/down/:id", authorization, Testimonio)
 // Eliminar testimonios
-//router.delete("admin/delete/:id", authorization, Testimonio)
+router.delete("/delete/:id", authorization, Testimonio.delete)
+
 
 
 

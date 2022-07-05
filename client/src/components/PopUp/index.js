@@ -3,8 +3,9 @@ import {PopUpBg, PopUp,PopUpContentContainer,PopUpGalleryContainer,PopUpImgProfi
 import {SliderData} from "../PopUp/SliderData"
 import {FaArrowAltCircleRight,FaArrowAltCircleLeft} from "react-icons/fa"
 import OutsideClickHandler from 'react-outside-click-handler';
+import axios from 'axios';
 
-export const Modal = ({ showModal, setShowModal, testimonio, showAdmin}) => {
+export const Modal = ({ showModal, setShowModal, testimonio, showAdmin1, showAdmin2}) => {
     const length =5;
     const [current, setCurrent] = useState(0);
 
@@ -17,7 +18,37 @@ export const Modal = ({ showModal, setShowModal, testimonio, showAdmin}) => {
     const prevSlide = () =>{
         setCurrent(current===0 ? length-1:current-1)
     }
-    
+    const config = {
+        headers: { token: localStorage.getItem("token") }
+    };
+    const eliminarTestimonio = async () =>{
+        console.log(localStorage.getItem("token"));
+        const getAllApiUrl = `http://localhost:3001/delete/${testimonio._id}`;
+        axios
+        .delete(getAllApiUrl, config)
+        .then((response) => {
+          console.log(response.data)
+          console.log("Eliminado")
+        })
+    }
+    const publicarTestimonio = async () =>{
+        const getAllApiUrl = `http://localhost:3001/up/${testimonio._id}`
+        axios
+        .put(getAllApiUrl, { state: "published" },config)
+        .then((response) => {
+          console.log(response.data)
+          console.log("Actualizado")
+        })
+    }
+    const bajarTestimonio = async () =>{
+        const getAllApiUrl = `http://localhost:3001/up/${testimonio._id}`
+        axios
+        .put(getAllApiUrl, { state: "unpublished" },config)
+        .then((response) => {
+          console.log(response.data)
+          console.log("Actualizado")
+        })
+    }
     return( <>{showModal ? (
         <PopUpBg>
             <OutsideClickHandler onOutsideClick={closeModal}>
@@ -58,10 +89,16 @@ export const Modal = ({ showModal, setShowModal, testimonio, showAdmin}) => {
                         <FaArrowAltCircleRight onClick={nextSlide}></FaArrowAltCircleRight>
                     </RightArrow>
                     </GalleryContainer>
-                    {showAdmin ? (
+                    {showAdmin1 ? (
                         <AdminManagmentSection>
-                            <AdminManagment style={{backgroundColor: "#e2aaa2"}}>Eliminar</AdminManagment>
-                            <AdminManagment style={{backgroundColor: "#72bfa0"}}>Publicar</AdminManagment>
+                            <AdminManagment style={{backgroundColor: "#e2aaa2"}} onClick = {()=>{eliminarTestimonio(); closeModal()}}>Eliminar</AdminManagment>
+                            <AdminManagment style={{backgroundColor: "#72bfa0"}} onClick = {()=>{publicarTestimonio(); closeModal()}} >Publicar</AdminManagment>    
+                        </AdminManagmentSection>
+                    ):null}
+                    {showAdmin2 ? (
+                        <AdminManagmentSection>
+                            <AdminManagment style={{backgroundColor: "#e2aaa2"}} onClick = {()=>{eliminarTestimonio(); closeModal()}}>Eliminar</AdminManagment>
+                            <AdminManagment style={{backgroundColor: "#fcac58"}} onClick = {()=>{bajarTestimonio(); closeModal()}} >Bajar</AdminManagment>
                         </AdminManagmentSection>
                     ):null}
                 </PopUpContentContainer>

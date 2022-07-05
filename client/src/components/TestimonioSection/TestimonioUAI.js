@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const serverApiUrl = 'http://localhost:3001/testimonio'
 
-export const TestimonioUAI = (showAdmin) => {
+export const TestimonioUAI = () => {
     const [testimonios, setTestimonios] = useState([])
     const [testimonio, setTestimonio] = useState([])
     const [showModal,setShowModal] = useState(false);
@@ -58,7 +58,7 @@ export const TestimonioUAI = (showAdmin) => {
                     </TestimonioContainer>
                     )}
                 </TestimoniosSectionContainer>
-                <Modal showModal={showModal} setShowModal={setShowModal} testimonio={testimonio}></Modal>
+                <Modal showModal={showModal} setShowModal={setShowModal} testimonio={testimonio} showAdmin2={true}></Modal>
         </TestimonioBg>
         
         </>

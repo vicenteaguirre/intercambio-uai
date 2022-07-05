@@ -1,26 +1,33 @@
-import React from "react";
-import { FormBox, FormContainer, FormTitle, FormBox2, FormText, FormInput, FormSelect,  FormInput2, TestimonioBox, FormButton  } from "./FormElements";
-import ReactDOM from "react-dom";
-import { useState } from "react";
-import { render } from 'react-dom';
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-
-
-const container = document.getElementById("root");
-const root = createRoot(container);
+import { React , useState} from "react";
+import { FormBox, FormContainer, FormTitle, FormText, FormInput, FormSelect, TestimonioBox, FormButton  } from "./FormElements";
+import axios from 'axios';
 
 const FormSection = () => {
-  const getAuth = async () => {
-    const getAllApiUrl = 'http://localhost:3001/verify'
+  const [nombreCompleto, setNombreCompleto] = useState([])
+  const [edad, setEdad] = useState([])
+  const [carrera, setCarrera] = useState([])
+  const [uniDestino, setUniDestino] = useState([])
+  const [pais, setPais] = useState([])
+  const [testimonio, setTestimonio] = useState([])
+  //const [imageProfile, setImageProfile] = useState([])
+
+  const uploadForm = async () => {
+    const getAllApiUrl = 'http://localhost:3001/crear-testimonio'
+    console.log(nombreCompleto + edad);
     axios
-    .get(getAllApiUrl,{ headers: { token: token } })
+    .post(getAllApiUrl, { 
+      nombre_completo: "Vicente",
+      edad: edad,
+      carrera: carrera,
+      u_destino: uniDestino,
+      pais: pais,
+      testimonio: testimonio
+     }
+     //file : imageProfile
+    )
     .then((response) => {
-      if(response.data===true){
-        setAuth(true);
-      }else{
-        setAuth(false);
-      }
+      console.log(response.data)
+      console.log("Creado")
     })
   }
   return (
@@ -28,8 +35,13 @@ const FormSection = () => {
         <FormTitle>¡Cuentanos tu experiencia!</FormTitle>
         <FormContainer>
           <FormBox>
-              <FormText>Nombre Completo:</FormText><FormInput type="text" placeholder="Ingrese su nombre completo"/>
-              <FormText>Edad:</FormText><FormSelect>
+              <FormText>Nombre Completo:</FormText>
+              <FormInput type="text" placeholder="Ingrese su nombre completo" onChange={(e) => {
+                  setNombreCompleto(e.target.value);
+               }}/>
+              <FormText>Edad:</FormText><FormSelect onChange={(e) => {
+                  setEdad(e.target.value);
+               }}>
               <option value="" hidden></option>
               <option value="17">17</option>
               <option value="18">18</option>
@@ -42,7 +54,10 @@ const FormSection = () => {
               <option value="25+">25+</option>
               </FormSelect>
               
-              <FormText>Carrera:</FormText><FormSelect>
+              <FormText>Carrera:</FormText>
+              <FormSelect onChange={(e) => {
+                  setCarrera(e.target.value);
+               }}>
               <option value="" hidden></option>
               <option value="IngCiv">Ingenieria Civil</option>
               <option value="IngCom">Ingenieria Comercial</option>
@@ -52,19 +67,21 @@ const FormSection = () => {
               <option value="Periodis">Periodismo</option>
               
               </FormSelect>
-              <FormText>Tipo de estudiante:</FormText><FormSelect>
-              <option value="" hidden></option>
-              <option value="UAI">Universidad Adolfo Ibañez</option>
-              <option value="Internacional">Internacional</option>
-              </FormSelect>
-              <FormText>Universidad de Destino:</FormText><FormInput type="text" placeholder="Ingrese su lugar de destino"/>
+              <FormText>Tipo de estudiante:</FormText>
+              <FormText>Universidad de Destino:</FormText><FormInput type="text" placeholder="Ingrese su lugar de destino" onChange={(e) => {
+                  setUniDestino(e.target.value);
+               }}/>
           </FormBox>
           
           <FormBox>
-          <FormText>Testimonio:</FormText><TestimonioBox type="text" placeholder="Ingrese su testimonio..."/>
-          <FormText>Ingrese imagenes y/o videos de su viaje:</FormText><FormInput name="Submit" type="file" />
+          <FormText>Testimonio:</FormText><TestimonioBox type="text" placeholder="Ingrese su testimonio... " onChange={(e) => {
+                  setTestimonio(e.target.value);
+               }}/>
+          <FormText>Ingrese imagenes y/o videos de su viaje:</FormText><FormInput name="Submit" type="file" onChange={(e) => {
+                  //setImageProfile(e.target.value);
+               }}/>
       
-          <FormButton onClick={}>Listo</FormButton>
+          <FormButton onClick={uploadForm}>Listo</FormButton>
           </FormBox>
 
       </FormContainer>

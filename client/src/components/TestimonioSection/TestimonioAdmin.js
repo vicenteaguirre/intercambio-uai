@@ -32,7 +32,7 @@ export const TestimonioAdmin = () => {
 
     useEffect(() => {
         getAll()
-    }, [])
+    }, [showModal])
 
     return (
         <>
@@ -56,7 +56,7 @@ export const TestimonioAdmin = () => {
                     </TestimonioContainer>
                     )}
                 </TestimoniosSectionContainer>
-                <Modal showModal={showModal} setShowModal={setShowModal} testimonio={testimonio} showAdmin={true}></Modal>
+                <Modal showModal={showModal} setShowModal={setShowModal} testimonio={testimonio} showAdmin1={true} ></Modal>
         </TestimonioBg>
         
         </>

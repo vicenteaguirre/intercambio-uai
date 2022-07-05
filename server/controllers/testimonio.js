@@ -4,21 +4,13 @@ const {Testimonio, setImageProfile} = require("../models/testimonio");
 // Update a Tutorial by the id in the request
 exports.update = async (req, res) => {
   try{
+    console.log("Update")
     const id = req.params.id;
     const query = {
-      nombre_completo: req.body.nombre_completo,
-      edad: req.body.edad,
-      pais: req.body.pais,
-      u_destino: req.body.u_destino,
-      testimonio: req.body.testimonio,
-      imageProfile: undefined
+      state: req.body.state,
     }
-    if(req.file) {
-      const {filename} = req.file;
-      query.imageProfile = setImageProfile(filename);
-    }
-    const testimonioUpdated = await Testimonio.findByIdAndUpdate(id,query)
-    res.status(201).send("Se actualizo el testimonio de "+ testimonioUpdated.nombre_completo)
+    const testimonioUpdated = await Testimonio.findByIdAndUpdate(id,query); 
+    res.status(201).send("Se actualizo el testimonio de "+ testimonioUpdated.nombre_completo);
 
   } catch (e){
     res.status(500).send({message: e.message || "Some error occurred while updating the Testimonio."})
@@ -26,8 +18,16 @@ exports.update = async (req, res) => {
   
 };
 // Delete a Tutorial with the specified id in the request
-exports.delete = (req, res) => {
-  
+exports.delete = async (req, res) => {
+  try{
+    console.log("Delete")
+    const id = req.params.id;
+    const testimonioUpdated = await Testimonio.findByIdAndDelete(id); 
+    res.status(201).send("Se actualizo el testimonio de "+ testimonioUpdated.nombre_completo);
+
+  } catch (e){
+    res.status(500).send({message: e.message || "Some error occurred while updating the Testimonio."})
+  }
 };
 // Delete all Tutorials from the database.
 exports.deleteAll = (req, res) => {
@@ -44,14 +44,12 @@ exports.findAllPublished = (req, res) => {
 exports.create = async (req, res) => {
   try{
    // Validate request
-    
+    console.log(req.body.nombre_completo);
     // Create a Tutorial
     const testimonio = new Testimonio({
       nombre_completo: req.body.nombre_completo,
       edad: req.body.edad,
-      u_destino: req.body.u_destino,
-      pais: req.body.pais,
-      testimonio: req.body.testimonio
+      state: "unpublished"
     });
 
     if(req.file) {
