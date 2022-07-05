@@ -30,6 +30,7 @@ const FormSection = () => {
       console.log("Creado")
     })
   }
+
   return (
       <> 
         <FormTitle>¡Cuentanos tu experiencia!</FormTitle>
@@ -65,23 +66,22 @@ const FormSection = () => {
               <option value="Derecho">Derecho</option>
               <option value="Psico">Psicología</option>
               <option value="Periodis">Periodismo</option>
-              
               </FormSelect>
-              <FormText>Tipo de estudiante:</FormText>
-              <FormText>Universidad de Destino:</FormText><FormInput type="text" placeholder="Ingrese su lugar de destino" onChange={(e) => {
-                  setUniDestino(e.target.value);
-               }}/>
+              <FormText>Pais de Destino:</FormText><FormInput type="text" placeholder="Ingrese su pais de destino"/>
+              <FormText>Universidad de Destino:</FormText><FormInput type="text" placeholder="Ingrese su Universidad de destino"/>
+              <FormText>Correo:</FormText><FormInput type="email" placeholder="Ingrese su lugar de destino"/>
+
           </FormBox>
           
           <FormBox>
-          <FormText>Testimonio:</FormText><TestimonioBox type="text" placeholder="Ingrese su testimonio... " onChange={(e) => {
-                  setTestimonio(e.target.value);
-               }}/>
-          <FormText>Ingrese imagenes y/o videos de su viaje:</FormText><FormInput name="Submit" type="file" onChange={(e) => {
-                  //setImageProfile(e.target.value);
-               }}/>
-      
-          <FormButton onClick={uploadForm}>Listo</FormButton>
+            <FormText>Testimonio:</FormText><TestimonioBox type="text" placeholder="Ingrese su testimonio... " onChange={(e) => {
+                    setTestimonio(e.target.value);
+                  }}/>
+            <FormText>Ingrese imagenes y/o videos de su viaje:</FormText><FormInput name="Submit" type="file" onChange={(e) => {
+                    //setImageProfile(e.target.value);
+                  }}/>
+        
+            <FormButton onClick={uploadForm}>Listo</FormButton>
           </FormBox>
 
       </FormContainer>

@@ -9,8 +9,7 @@ export const FormTitle = styled.h1`
     margin-left: 0px
     `
 export const FormBox = styled.div`
-    padding: 2em;
-    
+    padding: 2em; 
     flex-direction: column;
     justify-content: center;
     width: 700px;
@@ -133,11 +132,12 @@ export const FormInput = styled.input`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    height: 500px;
     margin: auto;
     max-width: 66rem;
     background: whitesmoke;
     border: 2px solid black;
     width: 100%;
     z-index: 1;
+    height: auto;
+    margin-bottom:2rem;
     `
