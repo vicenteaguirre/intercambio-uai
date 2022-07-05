@@ -35,6 +35,7 @@ export const Modal = ({ showModal, setShowModal, testimonio, showAdmin}) => {
                             <PopUpName>{testimonio.nombre_completo}</PopUpName>
                             <PopUpInfo>{testimonio.edad} años, Ing. Civil Industrial,</PopUpInfo>
                             <PopUpInfo>{testimonio.u_destino}, {testimonio.pais}.</PopUpInfo>
+                            <PopUpInfo>{testimonio.contacto}.</PopUpInfo>
                         </PopUpInfoContainer>
                     </PopUpHeaderContainer>
                     <PopUpTestimonyContainer>

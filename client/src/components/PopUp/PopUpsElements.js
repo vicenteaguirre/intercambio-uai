@@ -35,7 +35,15 @@ export const PopUpClosePlace =styled.div`
     right: -340px;
 `
 export const PopUpClose = styled.button`
-
+display: center;
+background-color: cleargray;
+border-radius: 0.4rem;
+border-color: black;
+height: 25px;
+width: 25px;
+&:hover{
+    transform: scale(1.1);
+}
 
 `
 export const PopUpHeaderContainer = styled.div`
