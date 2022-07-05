@@ -11,18 +11,7 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 const FormSection = () => {
-  const getAuth = async () => {
-    const getAllApiUrl = 'http://localhost:3001/verify'
-    axios
-    .get(getAllApiUrl,{ headers: { token: token } })
-    .then((response) => {
-      if(response.data===true){
-        setAuth(true);
-      }else{
-        setAuth(false);
-      }
-    })
-  }
+
   return (
       <> 
         <FormTitle>¡Cuentanos tu experiencia!</FormTitle>
@@ -50,21 +39,25 @@ const FormSection = () => {
               <option value="Derecho">Derecho</option>
               <option value="Psico">Psicología</option>
               <option value="Periodis">Periodismo</option>
-              
               </FormSelect>
+
               <FormText>Tipo de estudiante:</FormText><FormSelect>
               <option value="" hidden></option>
               <option value="UAI">Universidad Adolfo Ibañez</option>
               <option value="Internacional">Internacional</option>
               </FormSelect>
-              <FormText>Universidad de Destino:</FormText><FormInput type="text" placeholder="Ingrese su lugar de destino"/>
+
+              <FormText>Pais de Destino:</FormText><FormInput type="text" placeholder="Ingrese su pais de destino"/>
+              <FormText>Universidad de Destino:</FormText><FormInput type="text" placeholder="Ingrese su Universidad de destino"/>
+              <FormText>Correo:</FormText><FormInput type="email" placeholder="Ingrese su lugar de destino"/>
+
           </FormBox>
           
           <FormBox>
           <FormText>Testimonio:</FormText><TestimonioBox type="text" placeholder="Ingrese su testimonio..."/>
           <FormText>Ingrese imagenes y/o videos de su viaje:</FormText><FormInput name="Submit" type="file" />
       
-          <FormButton onClick={}>Listo</FormButton>
+          <FormButton >Listo</FormButton>
           </FormBox>
 
       </FormContainer>
